@@ -1,0 +1,9 @@
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+article {
+    white-space: pre-line;
+    width: 25%;
+}
