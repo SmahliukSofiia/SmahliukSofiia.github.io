@@ -4,7 +4,6 @@ function httpGet(url, cb) {
     xhr.open('get', url, true);
     xhr.addEventListener('load', function(e) {
         var result = JSON.parse(e.target.response);
-        console.log(result)
         cb(result);
     });
     xhr.send();
