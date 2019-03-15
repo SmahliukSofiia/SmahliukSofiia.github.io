@@ -1,0 +1,46 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #524f4e;
+}
+
+section, header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+article {
+    white-space: pre-line;
+    width: 20%;
+}
+
+header {
+    justify-content: space-around;
+}
+
+h2 {
+    color: rgba(119, 4, 62, 0.904);
+}
+
+button {
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    width: 140px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 45px;
+    margin: 5px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #524f4e;
+    background: white;
+  }
+
+  button:hover {
+    background: rgba(119, 4, 62, 0.904);
+    color: white;
+  }
