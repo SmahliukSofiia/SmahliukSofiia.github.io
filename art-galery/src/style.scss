@@ -1,0 +1,31 @@
+@import "~bootstrap/scss/bootstrap";
+
+.img {
+    height: 100vh;
+    width: auto;
+}
+
+.carousel{
+    &-inner {
+        width: auto;
+    }
+
+    &-item {
+        float: none;
+    }
+
+    &-caption {
+        padding-bottom: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: grey;
+        opacity: 0.75;
+        padding-top: 15px;
+    }
+}
+
+.my-style {
+    display: flex;
+    justify-content: center;
+}
