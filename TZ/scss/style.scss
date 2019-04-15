@@ -9,9 +9,15 @@
     100% {opacity: 1;}
 }
 
-@keyframes remove {
-    0% {opacity: 1;};
-    100% {opacity: 0;}
+@keyframes wake-up {
+    0% {transform: translateY(100%)}
+    100% {transform: translateY(0)}
+}
+
+@mixin animation {
+    opacity: 0;
+    animation: show 5s ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 * {
@@ -59,12 +65,13 @@ body {
     }
 }
 
+.wrap {
+    overflow: hidden;
+}
+
 .container {
     max-width: 1180px;
     margin: 0 auto;
-
-    animation: show 6s linear;
-    -webkit-animation: show 6s linear;
 }
 
 .head {
@@ -77,12 +84,12 @@ body {
     padding-top: 41px;
     position: relative;
     z-index: 2;
-    -webkit-animation: show 5s linear;
-    animation: show 5s linear;
 
     &__phones {
         color: #B0140E;
         margin-left: 6.53%;
+        @include animation;
+        animation-delay: 4s;
     }
 }
 
@@ -96,6 +103,8 @@ body {
 }
 
 .menu {
+    @include animation;
+    animation-delay: 4s;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -115,6 +124,8 @@ body {
     
         &-left {
             margin-left: 3.61%;
+            @include animation;
+            animation-delay: 4s;
         }
 
         &-caret {
@@ -128,6 +139,8 @@ body {
 }
 
 .actual {
+    @include animation;
+    animation-delay: 3s;
     margin-left: 11.53%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -185,6 +198,8 @@ $clip-height: 105px;
 $line-height: $clip-height + 20px;
 
 .animation {
+    @include animation;
+    animation-delay: 3s;
     position: absolute;
     top: -100px;
     left: -100px;
@@ -257,6 +272,8 @@ $line-height: $clip-height + 20px;
 
 
 .card {
+    @include animation;
+    animation-delay: 5s;
     width: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -278,6 +295,7 @@ $line-height: $clip-height + 20px;
     }
 
     &__button {
+        animation: wake-up 3s ease-in 5s;
         @include text;
         margin-top: 34px;
         padding: 20px;
@@ -314,7 +332,14 @@ $line-height: $clip-height + 20px;
     margin-top: 42px;
     margin-bottom: 48px;
 
+    &__icon {
+        @include animation;
+        animation-delay: 3s;
+    }
+
     &__text {
+        @include animation;
+        animation-delay: 4s;
         font-weight: 300;
         font-size: 18px;
     }
@@ -464,8 +489,16 @@ $line-height: $clip-height + 20px;
     background-color: #B0140E;
 
     &--first {
-        -webkit-animation: remove 6s linear;
-        animation: remove 6s linear;
+        -webkit-animation: remove 4s ease-in;
+        animation: remove 4s ease-in;
+        animation-fill-mode: forwards;
+
+        @keyframes remove {
+            0% {opacity: 1;};
+            70% {opacity: 1}
+            100% {opacity: 0;
+                background-color: #1D1D1D}
+        }
     }
 
     &--second {
@@ -496,75 +529,73 @@ $line-height: $clip-height + 20px;
 
 
 .logo-image {
+    position: absolute;
     -webkit-animation: rise 5s ease-in;
     animation: rise 5s ease-in;
-    -webkit-transform-origin: 15% 45%;
-    -ms-transform-origin: 15% 45%;
-    transform-origin: 15% 45%;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    transform-origin: 15% 50%;
 
     @keyframes rise {
-        0% {-webkit-transform: none;
-            -ms-transform: none;
-            transform: none;}
-        100% {-webkit-transform: scale(250);
-            -ms-transform: scale(250);
-            transform: scale(250);
-            opacity: 0.8};
+        0% {transform: none}
+        100% {transform: scale(22);
+            opacity: 0.6;}
     }
 }
 
+.section-image {
 
-path:nth-child(odd) {
-    animation: grow-down 1s linear 4s;
-    -webkit-animation-fill-mode: backwards;
-    animation-fill-mode: backwards;
+    path:nth-child(odd) {
+        -webkit-animation: grow-down 4s linear 4s;
+        animation: grow-down 3s linear 2s;
+        -webkit-animation-fill-mode: backwards;
+        animation-fill-mode: backwards;
 
-    @keyframes grow-down {
-        0% {-webkit-transform: translateX(-100px);
-            -ms-transform: translateX(-100px);
-            transform: translateX(-100px);}
-        50% {-webkit-transform: translateY(-30px);
-            -ms-transform: translateY(-30px);
-            transform: translateY(-30px);}
-        100% {-webkit-transform: none;
-            -ms-transform: none;
-            transform: none;}
+        @keyframes grow-down {
+            0% {-webkit-transform: translateX(-100px);
+                -ms-transform: translateX(-100px);
+                transform: translateX(-100px);}
+            50% {-webkit-transform: translateY(-30px);
+                -ms-transform: translateY(-30px);
+                transform: translateY(-30px);}
+            100% {-webkit-transform: none;
+                -ms-transform: none;
+                transform: none;}
+        }
     }
+
+    path:nth-child(even) {
+        -webkit-animation: grow-up 4s linear 4s;
+        animation: grow-up 3s linear 2s;
+        -webkit-animation-fill-mode: backwards;
+        animation-fill-mode: backwards;
+
+        @keyframes grow-up {
+            0% {-webkit-transform: translate(70px);
+                -ms-transform: translate(70px);
+                transform: translate(70px); }
+            100% {-webkit-transform: none;
+                -ms-transform: none;
+                transform: none;}
+        }
+    }
+
+    path:nth-child(3n+1) {
+        -webkit-animation: grow 4s linear;
+        animation: grow 3s linear;
+        -webkit-animation-fill-mode: backwards;
+        animation-fill-mode: backwards;
+
+        @keyframes grow {
+            0% {-webkit-transform: scale(1.5);
+                -ms-transform: scale(1.5);
+                transform: scale(1.5); }
+            100% {-webkit-transform: none;
+                -ms-transform: none;
+                transform: none;}
+        }
+    } 
 }
-
-path:nth-child(even) {
-    -webkit-animation: grow-up 1s linear 4s;
-    animation: grow-up 1s linear 4s;
-    -webkit-animation-fill-mode: backwards;
-    animation-fill-mode: backwards;
-
-    @keyframes grow-up {
-        0% {-webkit-transform: translate(70px);
-            -ms-transform: translate(70px);
-            transform: translate(70px); }
-        100% {-webkit-transform: none;
-            -ms-transform: none;
-            transform: none;}
-    }
-}
-
-path:nth-child(3n+1) {
-    -webkit-animation: grow 1s linear;
-    animation: grow 1s linear;
-    -webkit-animation-fill-mode: backwards 4s;
-    animation-fill-mode: backwards 4s;
-
-    @keyframes grow {
-        0% {-webkit-transform: scale(1.5);
-            -ms-transform: scale(1.5);
-            transform: scale(1.5); }
-        100% {-webkit-transform: none;
-            -ms-transform: none;
-            transform: none;}
-    }
-} 
 
 
 @media(max-width: 1085px) {

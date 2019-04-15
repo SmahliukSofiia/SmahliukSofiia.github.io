@@ -7,12 +7,12 @@
   }
 }
 
-@keyframes remove {
+@keyframes wake-up {
   0% {
-    opacity: 1;
+    transform: translateY(100%);
   }
   100% {
-    opacity: 0;
+    transform: translateY(0);
   }
 }
 
@@ -63,11 +63,13 @@ body {
   opacity: 0.7;
 }
 
+.wrap {
+  overflow: hidden;
+}
+
 .container {
   max-width: 1180px;
   margin: 0 auto;
-  animation: show 6s linear;
-  -webkit-animation: show 6s linear;
 }
 
 .head {
@@ -80,13 +82,15 @@ body {
   padding-top: 41px;
   position: relative;
   z-index: 2;
-  -webkit-animation: show 5s linear;
-  animation: show 5s linear;
 }
 
 .head__phones {
   color: #B0140E;
   margin-left: 6.53%;
+  opacity: 0;
+  animation: show 5s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 4s;
 }
 
 .wrapper {
@@ -99,6 +103,10 @@ body {
 }
 
 .menu {
+  opacity: 0;
+  animation: show 5s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 4s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,6 +125,10 @@ body {
 
 .menu__link-left {
   margin-left: 3.61%;
+  opacity: 0;
+  animation: show 5s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 4s;
 }
 
 .menu__link-caret {
@@ -128,6 +140,10 @@ body {
 }
 
 .actual {
+  opacity: 0;
+  animation: show 5s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
   margin-left: 11.53%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -178,6 +194,10 @@ body {
 
 /* Animation */
 .animation {
+  opacity: 0;
+  animation: show 5s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
   position: absolute;
   top: -100px;
   left: -100px;
@@ -262,6 +282,10 @@ body {
 }
 
 .card {
+  opacity: 0;
+  animation: show 5s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 5s;
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -284,6 +308,7 @@ body {
 }
 
 .card__button {
+  animation: wake-up 3s ease-in 5s;
   font-size: 12px;
   line-height: 20px;
   color: #FFFFFF;
@@ -322,7 +347,18 @@ body {
   margin-bottom: 48px;
 }
 
+.footer__icon {
+  opacity: 0;
+  animation: show 5s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+}
+
 .footer__text {
+  opacity: 0;
+  animation: show 5s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 4s;
   font-weight: 300;
   font-size: 18px;
 }
@@ -465,8 +501,22 @@ body {
 }
 
 .screen--first {
-  -webkit-animation: remove 6s linear;
-  animation: remove 6s linear;
+  -webkit-animation: remove 4s ease-in;
+  animation: remove 4s ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes remove {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    background-color: #1D1D1D;
+  }
 }
 
 .screen--second {
@@ -498,31 +548,27 @@ body {
 }
 
 .logo-image {
+  position: absolute;
   -webkit-animation: rise 5s ease-in;
   animation: rise 5s ease-in;
-  -webkit-transform-origin: 15% 45%;
-  -ms-transform-origin: 15% 45%;
-  transform-origin: 15% 45%;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  transform-origin: 15% 50%;
 }
 
 @keyframes rise {
   0% {
-    -webkit-transform: none;
-    -ms-transform: none;
     transform: none;
   }
   100% {
-    -webkit-transform: scale(250);
-    -ms-transform: scale(250);
-    transform: scale(250);
-    opacity: 0.8;
+    transform: scale(22);
+    opacity: 0.6;
   }
 }
 
-path:nth-child(odd) {
-  animation: grow-down 1s linear 4s;
+.section-image path:nth-child(odd) {
+  -webkit-animation: grow-down 4s linear 4s;
+  animation: grow-down 3s linear 2s;
   -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }
@@ -545,9 +591,9 @@ path:nth-child(odd) {
   }
 }
 
-path:nth-child(even) {
-  -webkit-animation: grow-up 1s linear 4s;
-  animation: grow-up 1s linear 4s;
+.section-image path:nth-child(even) {
+  -webkit-animation: grow-up 4s linear 4s;
+  animation: grow-up 3s linear 2s;
   -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }
@@ -565,11 +611,11 @@ path:nth-child(even) {
   }
 }
 
-path:nth-child(3n+1) {
-  -webkit-animation: grow 1s linear;
-  animation: grow 1s linear;
-  -webkit-animation-fill-mode: backwards 4s;
-  animation-fill-mode: backwards 4s;
+.section-image path:nth-child(3n+1) {
+  -webkit-animation: grow 4s linear;
+  animation: grow 3s linear;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
 }
 
 @keyframes grow {
