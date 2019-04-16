@@ -10,24 +10,57 @@
     <title>Wits</title>
 </head>
 <body class="light">
+    <div class="menuBar menuBar--light" id="menu">
+            <div class="cross" id="cross">
+                <i class="fas fa-times"></i>
+            </div>
+            <nav class="menu-small">
+                <li class="menu__item menu__item--small">
+                    <a href="#" class="menu__link link link-dark menu__link--small">О нас</a>
+                </li>
+                <li class="menu__item menu__item--small">
+                    <a href="#" class="menu__link link link-dark menu__link--small">
+                        наши услуги
+                        <i class="fas fa-caret-down menu__link-caret"></i>
+                    </a>
+                </li>
+                <li class="menu__item menu__item--small">
+                    <a href="#" class="menu__link link link-dark menu__link--small">Кейсы</a>
+                </li>
+                <li class="menu__item menu__item--small">
+                    <a href="#" class="menu__link link link-dark menu__link--small">Клиенты</a>
+                </li>
+                <li class="menu__item menu__item--small">
+                    <a href="#" class="menu__link link link-dark menu__link--small">контакты</a>
+                </li>
+            </nav>
+        </div>
     <div class="container">
-        <header class="head">
-            <div class="head__logo">
-                <img src="img/Group_dark.svg" alt="logotype">
-            </div>
-            <div class="head__phones head__phones--position">
-                <div>+38 (093) 910 28 88</div>
-                <div>+38 (098) 910 28 88</div>
-            </div>
-            <a href="#" class="link link-dark menu__link-left title">РУС</a>
-            <div class="actual">
-                <a href="#" class="link link-dark title">Актуальное</a>
-                <div class="actual__icon">
-                    <img src="img/ring_dark.svg" alt="ring">
+        <header class="head head--light">
+            <div class="wrapper">
+                <div class="head__logo">
+                    <a href="#">
+                        <img src="img/Group_dark.svg" alt="logotype">
+                    </a>
+                </div>
+                <div class="head__phones static head__phones--position">
+                    <div>+38 (093) 910 28 88</div>
+                    <div>+38 (098) 910 28 88</div>
+                </div>
+                <span class="head__lang menu__link-left static">
+                    <a href="#" class="link link-dark title">РУС</a>
+                </span>
+                <div class="actual static">
+                    <span class="title title--other">Актуальное</span>
+                    <div class="actual__icon">
+                        <img src="img/ring_dark.svg" alt="ring">
+                    </div>
                 </div>
             </div>
-            </nav>
-            <nav class="menu menu--other">
+            <div class="menuButton" id="menuButton">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="menu static menu--other">
                 <li class="menu__item">
                     <a href="#" class="menu__link link link-dark">О нас</a>
                 </li>
@@ -50,7 +83,7 @@
             <div class="more">
                 <button class="more__button">
                     <i class="fas fa-arrow-up more__button-arrow arrow"></i>
-                    <span class="text more__content card__button title">Записаться на консультацию</span>
+                    <span class="text more__content card__button title static">Записаться на консультацию</span>
                 </button>
             </div>
         </header>
@@ -108,29 +141,46 @@
                         </g>
                     </g>
                 </svg>
+                <div class="circle circle--large">
+                    <div class="circle circle--middle"></div>
+                </div>
             </div>
             <div class="section-text">
                 <div class="block block--first">
-                    <h1 class="block__title">
-                        Что происходит в мире?
-                    </h1>
-                    <div class="block__desc">
-                        Ожидания клиентов растут</br>
-                        Качество продуктов совершенствуется</br>
-                        Повышается производительность</br>
-                        Формируются новые модели компаний</br>
+                    <div class="wrap">
+                        <h1 class="block__title">
+                            Что происходит в мире?
+                        </h1>
+                    </div>
+                    <div class="wrap">
+                        <div class="block__desc">
+                            Ожидания клиентов растут</br>
+                            Качество продуктов совершенствуется</br>
+                            Повышается производительность</br>
+                            Формируются новые модели компаний</br>
+                        </div>
                     </div>
                 </div>
                 <div class="block block--second">
-                    <h1 class="block__title block__title--second">
-                        Что происходит с компаниями?
-                    </h1>
-                    <div class="block__desc">
-                        Не соответствуют уровню ожиданий клиентов</br>
-                        Качество продукта стоит на месте</br>
-                        Нет команды, способной реализовать прорывную стратегию</br>
-                        Проигрывают клиентов компаниям нового типа</br>
+                    <div class="wrap">
+                        <h1 class="block__title block__title--second">
+                            Что происходит с компаниями?
+                        </h1>
                     </div>
+                    <div class="wrap">
+                        <div class="block__desc block__desc--second">
+                            Не соответствуют уровню ожиданий клиентов</br>
+                            Качество продукта стоит на месте</br>
+                            Нет команды, способной реализовать прорывную стратегию</br>
+                            Проигрывают клиентов компаниям нового типа</br>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap special">
+                    <button class="card__button title special-btn">
+                        <span class="text">Записаться на консультацию</span>
+                        <i class="fas fa-arrow-up arrow"></i>
+                    </button>
                 </div>
                 <div class="box">
                     <div class="box__icon">
@@ -144,6 +194,6 @@
             </div>
         </div>
     </div>
-    <script src="script2.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
