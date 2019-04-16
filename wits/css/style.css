@@ -194,23 +194,18 @@ body {
     -webkit-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
-    -webkit-transform: translate3d(0, -105px, 0);
-    transform: translate3d(0, -105px, 0);
+    transform: translate3d(0, 0, 0);
     vertical-align: top;
     white-space: nowrap;
-    -webkit-animation: go 1s ease-in 4.5s alternate 2;
-    animation: go 1s ease-in 4.5s alternate 2; }
+    animation: go 1s ease-in 4.5s alternate 2 backwards; }
 
 @keyframes go {
   0% {
-    -webkit-transform: translate3d(0, -105px, 0);
     transform: translate3d(0, -105px, 0); }
   100% {
-    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); } }
   .animation:hover p {
-    -webkit-transform: translate3d(0, -105px, 0);
-    transform: translate3d(0, 0, 0); }
+    transform: translate3d(0, -105px, 0); }
 
 .card {
   opacity: 0;
@@ -690,5 +685,3 @@ body {
 @media (max-width: 375px) {
   body {
     min-width: 375px; } }
-
-/*# sourceMappingURL=main.css.map */
