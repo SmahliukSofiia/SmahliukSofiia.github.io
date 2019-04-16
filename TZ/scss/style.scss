@@ -567,8 +567,8 @@ $line-height: $clip-height + 20px;
     }
 
     &--second {
-        -webkit-animation: move-up 1s ease-in forwards;
-        animation: move-up 1s ease-in forwards;
+        -webkit-animation: move-up 1s ease-in;
+        animation: move-up 1s ease-in;
 
         @keyframes move-up {
             0% {-webkit-transform: none;
@@ -582,8 +582,8 @@ $line-height: $clip-height + 20px;
 
     &--third {
         background-color: #1D1D1D;
-        -webkit-animation: move-up 1s ease-in 1s forwards;
-        animation: move-up 1s ease-in 1s forwards;
+        -webkit-animation: move-up 1s ease-in 1s;
+        animation: move-up 1s ease-in 1s;
     }
 }
 
