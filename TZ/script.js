@@ -6,7 +6,6 @@ setTimeout(() => {
     removePage('screen1');
 }, 5000);
 
-
 function addPage(className) {
     let block = document.createElement('div');
     block.className = className;
@@ -18,9 +17,11 @@ addPage('screen screen--second');
 
 addPage('screen screen--third');
 
+function removePage(className) {
+    document.getElementById(className).remove();
+}
 
 setTimeout(() => {
-    removePage('screen screen--second');
     removePage('screen screen--third');
 }, 2000);
 
