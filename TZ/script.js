@@ -17,10 +17,6 @@ addPage('screen screen--second');
 
 addPage('screen screen--third');
 
-function removePage(className) {
-    document.getElementById(className).remove();
-}
-
 setTimeout(() => {
     removePage('screen screen--third');
 }, 2000);
