@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>TestTask</title>
+</head>
+<body>
+    <input type="file" 
+           name="picture1"
+           accept="image/*" 
+           id="picture1" 
+           class="inputfile first-input"
+           onchange="readFirstImg(this)">
+    <label for="picture1" class="label"> Choose first image</label>
+
+    <input type="file"
+           name="picture2" 
+           accept="image/*" 
+           id="picture2"
+           class="inputfile second-input"
+           onchange="readSecondImg(this)">
+    <label for="picture2" class="label"> Choose second image</label>
+    
+</br>
+
+    <canvas id="drawingCanvas" class="canvas" height="350px"></canvas>
+    
+    <script src="main.js"></script>
+</body>
+</html>
