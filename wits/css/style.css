@@ -194,18 +194,18 @@ body {
     -webkit-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, -105px, 0);
     vertical-align: top;
     white-space: nowrap;
-    animation: go 1s ease-in 4.5s alternate 2 backwards; }
+    animation: go 1s ease-in 4.5s alternate 3 backwards; }
 
 @keyframes go {
   0% {
-    transform: translate3d(0, -105px, 0); }
+    transform: translate3d(0, 0, 0); }
   100% {
-    transform: translate3d(0, 0, 0); } }
+    transform: translate3d(0, -105px, 0); } }
   .animation:hover p {
-    transform: translate3d(0, -105px, 0); }
+    transform: translate3d(0, 0, 0); }
 
 .card {
   opacity: 0;
