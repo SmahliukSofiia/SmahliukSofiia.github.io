@@ -12,6 +12,18 @@
   font-weight: 600;
   font-style: normal; }
 
+html {
+  font-size: 20px; }
+  @media screen and (max-width: 1280px) {
+    html {
+      font-size: 18px; } }
+  @media screen and (max-width: 768px) {
+    html {
+      font-size: 17px; } }
+  @media screen and (max-width: 480px) {
+    html {
+      font-size: 16px; } }
+
 body {
   font-family: 'Open Sans', sans-serif;
   color: #555559; }
@@ -26,7 +38,7 @@ body {
 .images {
   position: relative;
   overflow: hidden;
-  height: 487px; }
+  height: 24.35rem; }
   .images__gradient {
     height: 487px;
     width: 1440px;
@@ -47,7 +59,7 @@ body {
   .images-link {
     color: #ffffff;
     font-family: 'Proxima Nova Rg', sans-serif;
-    font-size: 15px;
+    font-size: 0.75rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -65,18 +77,20 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 43px 0 37px 0;
   position: relative;
   -webkit-box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.11);
           box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.11); }
   .menu__item {
     list-style-type: none;
-    margin-right: 78px; }
+    margin-right: 3.9rem; }
     .menu__item:last-child {
       margin-right: 0px; }
   .menu__link {
     font-family: 'Open Sans Semibold', arial;
-    font-size: 20px;
+    font-size: 1rem;
     line-height: 24px;
     color: #2e2e2e;
     text-transform: uppercase;
@@ -97,7 +111,7 @@ body {
     margin-top: 112px; }
   .section__title {
     font-weight: 300;
-    font-size: 56px;
+    font-size: 2.8rem;
     letter-spacing: -2.24px;
     margin-top: 36px; }
   .section__button {
@@ -107,15 +121,18 @@ body {
     border-radius: 6px;
     color: #ffffff;
     font-family: 'Open Sans Semibold', arial;
-    font-size: 20px;
+    font-size: 1rem;
     line-height: 24px;
     letter-spacing: -0.8px;
     cursor: pointer; }
 
 .card {
   position: relative;
-  padding-right: 50%; }
-  .card::after {
+  padding-right: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .card::before {
     content: "";
     display: block;
     background-image: url(../images/Layer_28.jpg);
@@ -128,12 +145,12 @@ body {
     top: 0;
     right: 0; }
   .card .box {
-    padding: 219px 147px 230px 86px; }
+    padding: 10.95rem 7.35rem 11.5rem 4.3rem; }
     .card .box--other {
       padding-right: 154px;
       padding-left: 78px; }
   .card__title {
-    font-size: 24px;
+    font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: -0.96px;
     padding-left: 52px;
@@ -148,23 +165,20 @@ body {
       left: 0; }
   .card__description {
     margin: 29px 0 0 51px;
-    font-size: 18px;
+    font-size: 0.9rem;
     font-weight: 300;
     letter-spacing: -0.72px; }
   .card--reverse {
     padding-right: 0;
     padding-left: 50%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end; }
-    .card--reverse::after {
+    .card--reverse::before {
       left: 0;
       right: auto;
       background-image: url(../images/Layer_29.jpg); }
-  .card--other::after {
+  .card--other::before {
     background-image: url(../images/Layer_30.jpg); }
 
 .info-box {
@@ -176,6 +190,44 @@ body {
           justify-content: space-between;
   background-color: #efefef;
   padding: 25px 20px;
-  font-size: 14px;
+  font-size: 0.7rem;
   font-weight: 400;
   line-height: 24px; }
+  .info-box__contact {
+    text-align: center; }
+
+@media (max-width: 1024px) {
+  .card {
+    padding-right: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .card::before {
+      position: static;
+      width: 100%;
+      padding-bottom: 50%;
+      height: auto; }
+    .card--reverse {
+      padding-left: 0; }
+    .card .box {
+      padding: 2.5rem 1.5rem 3rem 1.5rem; } }
+
+@media (max-width: 700px) {
+  .info-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .menu {
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+    .menu__item, .menu__item:last-child {
+      margin: 0 20px; } }
+
+@media (max-width: 320px) {
+  body {
+    min-width: 320px; } }
