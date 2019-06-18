@@ -226,7 +226,11 @@ body {
     -ms-flex-pack: distribute;
         justify-content: space-around; }
     .menu__item, .menu__item:last-child {
-      margin: 0 20px; } }
+      margin: 0 20px; }
+  .section__title {
+    margin-left: 15px;
+    margin-right: 15px;
+    line-height: 60px; } }
 
 @media (max-width: 320px) {
   body {
