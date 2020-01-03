@@ -8,6 +8,9 @@ function getDate(url) {
         response.json().then(function (text) {
             let json = text.items;
             showResult(json);
+            return json;
+        }).then(function (json) {
+            saveResult(json);
         });
     });
 };
@@ -63,9 +66,16 @@ function filterResult() {
 }
 
 btnSort.addEventListener('click', function () {
-    sortResult();
+
 });
 
-function sortResult() {
-    json.sort((a, b) => a.name > b.name ? 1 : -1);
+function sortResult(json) {
+    json.sort((a, b) => {
+        var comparison = a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+        if (comparison === 0) {
+            return a.name.localeCompare(b.name);
+        }
+        return comparison;
+    });
+    showResult(json);
 }
