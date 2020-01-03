@@ -1,0 +1,4 @@
+.card{display: flex;margin-bottom: 30px;border-bottom: 1px solid grey;}
+.first-block{width: calc(60% - 20px);margin-right: 20px;}
+.second-block{width: 30%;}
+.result-cards{margin-top: 40px;}
