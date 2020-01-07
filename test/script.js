@@ -10,7 +10,9 @@ function getDate(url) {
             showResult(json);
             return json;
         }).then(function (json) {
-            saveResult(json);
+            btnSort.addEventListener('click', function () {
+                sortResult(json);
+            });
         });
     });
 };
@@ -24,6 +26,9 @@ btnSearch.addEventListener('click', function() {
 function showResult(json) {
     var section = document.createElement('section');
     section.className = 'result-cards';
+    if (section) {
+        section.remove();
+    }
 
     for (var i = 0; i < json.length; i++) {
 
@@ -65,11 +70,11 @@ function filterResult() {
 
 }
 
-btnSort.addEventListener('click', function () {
-
-});
-
 function sortResult(json) {
+    var section = document.querySelector('section');
+    if (section) {
+        section.remove();
+    }
     json.sort((a, b) => {
         var comparison = a.name.toLowerCase().localeCompare(b.name.toLowerCase());
         if (comparison === 0) {
