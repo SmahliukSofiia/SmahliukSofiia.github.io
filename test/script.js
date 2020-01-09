@@ -8,6 +8,7 @@ function getDate(url) {
         response.json().then(function (text) {
             let json = text.items;
             showResult(json);
+            addFilterOptions(json);
             return json;
         }).then(function (json) {
             btnSort.addEventListener('click', function () {
@@ -24,21 +25,23 @@ btnSearch.addEventListener('click', function() {
 });
 
 function showResult(json) {
-    var section = document.createElement('section');
-    section.className = 'result-cards';
     if (section) {
         section.remove();
+    } else {
+        var section = document.createElement('section');
+        section.className = 'result-cards';
     }
 
     for (var i = 0; i < json.length; i++) {
 
-        var card = document.createElement('article'),
-        first_block = document.createElement('div'),
-        second_block = document.createElement('div'),
-        card_link = document.createElement('a'),
-        card_descr = document.createElement('p'),
-        card_date = document.createElement('p'),
-        card_lang = document.createElement('p');
+        var language = json[i].language,
+            card = document.createElement('article'),
+            first_block = document.createElement('div'),
+            second_block = document.createElement('div'),
+            card_link = document.createElement('a'),
+            card_descr = document.createElement('p'),
+            card_date = document.createElement('p'),
+            card_lang = document.createElement('p');
 
 
         card_link.textContent = json[i].name;
@@ -58,8 +61,24 @@ function showResult(json) {
         section.appendChild(card);
         card.appendChild(first_block);
         card.appendChild(second_block);
+
+        if (!arr.includes(language) & language !== null){
+            arr = arr.concat(language);
+            console.log(arr)
+        }
     }
     document.body.appendChild(section);
+
+    var select = document.querySelector('#btn-filter');
+    for( var j = 0; j < arr.length; j++) {
+        var option = document.createElement('option');
+        option.label = arr[j];
+        select.appendChild(option);
+    }
+}
+
+function addFilterOptions(json) {
+    console.log(json)
 }
 
 btnFilter.addEventListener('click', function () {
@@ -84,3 +103,4 @@ function sortResult(json) {
     });
     showResult(json);
 }
+
