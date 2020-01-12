@@ -14,6 +14,9 @@ function getDate(url) {
             btnSort.addEventListener('click', function () {
                 sortResult(json);
             });
+            btnFilter.addEventListener('click', function () {
+                console.log('hello')
+            });
         });
     });
 };
@@ -61,32 +64,27 @@ function showResult(json) {
         section.appendChild(card);
         card.appendChild(first_block);
         card.appendChild(second_block);
-
-        if (!arr.includes(language) & language !== null){
-            arr = arr.concat(language);
-            console.log(arr)
-        }
     }
     document.body.appendChild(section);
+}
+
+function addFilterOptions(json) {
+    var arr = [];
+
+    for (var j = 0; j < json.length; j++) {
+        var language = json[j].language;
+
+        if (!arr.includes(language) & language !== null) {
+            arr = arr.concat(language);
+        }
+    }
 
     var select = document.querySelector('#btn-filter');
-    for( var j = 0; j < arr.length; j++) {
+    for (var j = 0; j < arr.length; j++) {
         var option = document.createElement('option');
         option.label = arr[j];
         select.appendChild(option);
     }
-}
-
-function addFilterOptions(json) {
-    console.log(json)
-}
-
-btnFilter.addEventListener('click', function () {
-
-});
-
-function filterResult() {
-
 }
 
 function sortResult(json) {
@@ -104,3 +102,15 @@ function sortResult(json) {
     showResult(json);
 }
 
+function filterResult(json) {
+    var select = document.querySelector('#btn-filter'),
+        val = select.options[select.selectedIndex].value,
+        result = [];
+
+    for (var z = 0; z < json.length; z++) {
+        json[z].language == 'HTML';
+        result.concat(json[z]);
+    }
+
+    console.dir(val)
+}
