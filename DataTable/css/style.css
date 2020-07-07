@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.table th, .table td {
+    border: 1px solid #c3c4c7;
+    padding: 10px 20px;
+}
+
+
+.pagination {
+  display: flex;
+  align-items: center;
+}
+
+.pagination a, .pagination span  {
+  text-decoration: none;
+  padding: 5px 15px;
+  border: 1px solid #c3c4c7;
+  color: #000;
+}
+.pagination {
+    border-radius: 2px;
+}
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+th > button {
+    border: none;
+    background-color: transparent;
+    margin-left: 4px;
+}
+
+.table__body > tr > td:last-child {
+    text-align: center;
+}
+
+.select {
+    padding: 5px;
+    border-color: #c3c4c7;
+    border-radius: 2px;
+}
