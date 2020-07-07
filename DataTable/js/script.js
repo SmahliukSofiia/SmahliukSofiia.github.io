@@ -2,7 +2,7 @@ let skip = 0;
 let limit = 10;
 let order = '';
 let totalEl;
-let startUrl = 'http://api.odesseo.com.ua/warehouses';
+let startUrl = 'https://api.odesseo.com.ua/warehouses';
 
 function chanceTable(skip, limit, order) {
     let url = startUrl + '?skip=' + skip + '&limit=' + limit + order;
