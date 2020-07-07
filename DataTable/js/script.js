@@ -2,7 +2,7 @@ let skip = 0;
 let limit = 10;
 let order = '';
 let totalEl;
-let startUrl = 'https://api.odesseo.com.ua/warehouses';
+let startUrl = 'http://api.odesseo.com.ua/warehouses';
 
 function chanceTable(skip, limit, order) {
     let url = startUrl + '?skip=' + skip + '&limit=' + limit + order;
@@ -77,6 +77,7 @@ function changeLimit() {
         let num = event.target.value;
         document.getElementById("table-body").innerHTML = '';
         chanceTable(skip, num, order);
+        addPagination(totalEl, num);
         return limit = num;
     });
 }
@@ -93,7 +94,6 @@ function addPagination(totalElements, perPage) {
     paginationArray.splice(visibleLinks - 1, 1, linksCount);
 
     (function paginationInit(currentPage = 1) {
-
         if (linksCount > visibleLinks) {
             if (linksCount - currentPage < visibleLinks - 1 && currentPage !== paginationArray[1]) {
                 if (linksCount - currentPage >= visibleLinks - 2) {
@@ -143,10 +143,11 @@ function addPagination(totalElements, perPage) {
 
         paginationContainer.childNodes.forEach(el => {
             el.onclick = function (e) {
-                let count = e.target.innerHTML;
+                let count = e.target.innerHTML * limit;
                 e.preventDefault();
-                paginationInit(+count);
+                paginationInit(+e.target.innerHTML);
                 chanceTable(count, limit, order);
+                e.target.className = 'active';
                 return skip = count;
             };
         });
