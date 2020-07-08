@@ -25,10 +25,6 @@
 .pagination {
     border-radius: 2px;
 }
-.pagination > a.active {
-    background-color: cornflowerblue;
-    color: #fff;
-}
 
 .footer {
     display: flex;
