@@ -147,6 +147,7 @@ function addPagination(totalElements, perPage) {
                 e.preventDefault();
                 paginationInit(+e.target.innerHTML);
                 chanceTable(count, limit, order);
+                e.target.className = 'active';
                 return skip = count;
             };
         });
